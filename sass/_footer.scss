@@ -1,0 +1,11 @@
+footer {
+    height: 85px;
+    width: 100%;
+    background: $base-color-light;
+    border-top: 1px solid $base-color;
+    p {
+        @include rhythm(1,0,0,0,16px);
+        padding-left: $gutter-width;
+        color: $background;
+    }
+}

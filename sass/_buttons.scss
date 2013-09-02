@@ -1,0 +1,70 @@
+#mobilemenubutton {
+    @include at-breakpoint($break) {
+        display: none;
+    }
+    position: fixed;
+    top: .3em;
+    right: $gutter-width;
+    @include adjust-font-size-to(24px);
+    @include rhythm(0,.35,.35,0,16px);
+    @include border-radius(.25em);
+    @include background-image(linear-gradient($base-color-light, $base-color-dark));
+    @include box-shadow(rgba($background, .3) 1px 1px 0 0 inset);
+    border: 1px solid darken($base-red, 8%);
+    color: darken($background, 15%);
+    text-shadow: 1px 1px rgba($base-color-dark, .30);
+    &:active {
+        @include background-image(linear-gradient(lighten($base-color-light, 10%), lighten($base-color-dark, 10%)));
+        @include box-shadow(darken($base-color-dark, 25%) 0 0 .2em inset);
+        border: 1px solid darken($base-color-dark, 30%);
+    }
+}
+
+#backbutton {
+    @include at-breakpoint($break) {
+        display: none;
+    }
+    position: fixed;
+    top: .3em;
+    left: $gutter-width;
+    font-weight: 700;
+    @include adjust-font-size-to(16px);
+    @include rhythm(0,1.25,1.25,0,16px);
+    @include border-radius(.25em);
+    @include background-image(linear-gradient($base-color-light, $base-color-dark));
+    @include box-shadow(rgba($background, .3) 1px 1px 0 0 inset);
+    border: 1px solid darken($base-red, 8%);
+    color: darken($background, 15%);
+    text-shadow: 1px 1px rgba($base-color-dark, .30);
+    &:active {
+        @include background-image(linear-gradient(lighten($base-color-light, 10%), lighten($base-color-dark, 10%)));
+        @include box-shadow(darken($base-color-dark, 25%) 0 0 .2em inset);
+        border: 1px solid darken($base-color-dark, 30%);
+    }
+}
+
+@mixin basicbutton {
+    text-decoration: none;
+    text-align: center;
+    color: lighten($base-text, 60%);
+    text-shadow: 1px 1px rgba($background, .30);
+    background: $base-color-dark;
+    background-color: $base-color-dark;
+    @include span-columns(8,12);
+    @include squish(2,2);
+    @include adjust-font-size-to(16px);
+    @include border-radius(.45em);
+    @include background-image(linear-gradient(lighten($base-color-light, 20%), lighten($base-color-dark, 20%)));
+    @include box-shadow(rgba($background, .3) 1px 1px 0 0 inset);
+    @include margin-leader(3, 16px);
+    padding: rhythm(1, 16px);
+    border: 1px solid $base-red;
+    &:hover {
+        background: darken($base-color-dark, 10%);
+        background-color: darken($base-color-dark, 10%);
+        @include background-image(linear-gradient($base-color-light, $base-color-dark));
+    }
+    &:active {
+        @include background-image(linear-gradient($base-color-light, $base-color-dark));
+    }
+}

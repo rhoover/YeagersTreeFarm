@@ -1,0 +1,45 @@
+.hero {
+    display: block;
+    margin-top: 50px;
+    .herosmall{
+        max-width: 100%;
+        width: 100%;
+    }
+    .heromedium {
+        display: none;
+    }
+    .herolarge {
+        display: none;
+    }
+    @include at-breakpoint($break) {
+        margin-top: 70px;
+        .herosmall{
+            display: none;
+        }
+        .heromedium{
+            display: block;
+            max-width: 100%;
+            width: 100%;
+        }
+        .herolarge {
+            display: none;
+        }
+    }
+    @include at-breakpoint($break1) {
+        .herosmall {
+            display: none;
+        }
+        .heromedium {
+            display: none;
+        }
+        .herolarge {
+            display: block;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+// .hero {
+ 
+// }

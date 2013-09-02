@@ -1,0 +1,38 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+
+// ---------------------------------------------------------------------------
+
+
+$total-columns: 12;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width;
+$container-width: 82em;
+$break: 50em 12; //break from phone to tablet
+$break1: 60em 12; //break from tablet to desktop
+$breakdown: 7 40em; //only used for menu
+
+$show-grid-backgrounds  : true;
+
+// Vertical Rhythm Variables
+
+$base-font-size: 16px;
+$base-line-height: 6px;
+$relative-font-sizing: true;
+$min-line-padding: 2px;
+$round-to-nearest-half-line: true;
+
+// Color Variables
+
+// $base-color: rgb(154,173,130);
+$base-color: rgb(98,115,76);
+$base-color-dark: darken($base-color, 8%);
+$base-color-light: lighten($base-color, 6%);
+$background: rgb(240,240,240);
+$background-dark: darken($background, 25%);
+$base-text: darken($background, 50%);
+$dark-base-text: darken($base-text, 20%);
+$base-red: rgb(115,56,56);

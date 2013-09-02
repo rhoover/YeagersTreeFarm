@@ -1,0 +1,78 @@
+.content {
+    // @include susy-grid-background;
+    .happyfaces {
+        display: none;
+    }
+    @include at-breakpoint($break) {
+        // @include pad(1,1);
+        // @include susy-grid-background;
+        .happyfaces {
+            @include span-columns(7,12);
+            display: block;
+            overflow: hidden;
+            #home1 {
+                // @include fluid-ratio(622px 600px, 122px 100px);
+                position: relative;
+                // margin-left: -10em;
+                z-index: 6;
+            }
+            #home2 {
+                // @include fluid-ratio(500px 643px, 100px 243px);
+                position: relative;
+                // margin: -15em 0 0 6em;
+                margin: -15em 0;
+                float: right;
+                z-index: 4;
+            }
+            #home3 {
+                position: relative;
+                margin: 10em 0 0 0;
+                z-index: 5;
+            }
+        }
+        .frontpageinfo {
+            @include span-columns(5 omega, 12);
+            display: block;
+            overflow: hidden;
+        }
+    }
+    .frontpagelist {
+        // @include susy-grid-background;
+        list-style: none outside;
+        padding: 0 $gutter-width/2 0 $gutter-width/2;
+        margin-top: 0;
+        display: block;
+        overflow: hidden;
+    }
+    .frontpagelistitem{
+        @include margin-trailer(16, 16px);
+        &:first-child {
+            @include margin-trailer(3, 16px);
+        }
+    }
+    .frontpagelistheader {
+        font-family: 'Julius Sans One', sans-serif;
+        border-bottom: 1px solid $background-dark;
+        @include margin-trailer(3, 16px);
+        .frontpagelistimg {
+            float: left;
+            @include opacity(0.5);
+        }
+        .heading {
+            @include adjust-font-size-to(27px);
+            @include pre(1);
+            @include rhythm(0,3.5,0,0,26px);
+            color: $base-text;
+            overflow: hidden;
+        }
+    }
+    .frontpagelisttext {
+        @include adjust-font-size-to(14px);
+        @include squish(1,1);
+        @include rhythm(0,0,0,1,16px);
+        color: $dark-base-text;
+    }
+    .frontpagelistanchor {
+        @include basicbutton;
+    }
+}

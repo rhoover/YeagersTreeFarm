@@ -1,0 +1,100 @@
+//Compass Stuff
+// @import "normalize";
+@import "compass/reset";
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/css3/border-radius";
+
+// Imports
+@import "base";
+// @import "fluidimage";
+
+//Components
+@import "menus";
+@import "buttons";
+@import "fluidimage";
+
+/* -------------------------------------------------------------------------*/
+/* Vertical Rhythm */
+/* -------------------------------------------------------------------------*/
+html {
+    @include adjust-leading-to(4, 16px);
+}
+p {
+    @include rhythm(0,0,0,2,16px);
+}
+h2 {
+    font-weight: 700;
+    font-family: 'Julius Sans One', sans-serif;
+    @include adjust-font-size-to(26px);
+    // @include pre(1);
+    @include rhythm(0,1,2,0,26px);
+    color: $base-text;
+    // overflow: hidden;
+}
+
+/* ------------------------------------------------------------------------*/
+/* Global Styles */
+/* -------------------------------------------------------------------------*/
+
+body {
+    background: url("/images/striped_lens.png") repeat, $background;
+    text-rendering: optimizeLegibilty;
+    font-family: 'Open Sans', sans-serif;
+}
+a:focus {
+    outline: 0;
+}
+@include border-box-sizing;
+.bold {
+    font-weight: 700;
+}
+img {
+    max-width: 100%;
+}
+.imgleft {
+    float: left;
+    margin-right: 1em;
+}
+.imgright {
+    float: right;
+    margin-left: 1em;
+}
+.small {
+    @include adjust-font-size-to(13px);
+    @include rhythm(1,0,0,0,16px);
+    padding-left: $gutter-width;
+    color: $background;
+}
+
+/* -------------------------------------------------------------------------*/
+/* Layout */
+/* -------------------------------------------------------------------------*/
+
+/* -------------------------------------------------------------------------*/
+@import "navigation";
+
+
+/* -------------------------------------------------------------------------*/
+@import "heroimage";
+
+/* -------------------------------------------------------------------------*/
+.contentwrapper {
+    @include container($total-columns);
+    // @include susy-grid-background;
+    margin-top: $gutter-width;
+    @include at-breakpoint($break1) {
+        // @include susy-grid-background;
+        padding: 0 $gutter-width*2;
+    }
+
+}
+
+/* -------------------------------------------------------------------------*/
+@import "frontcontent";
+
+@import "innercontent";
+
+@import "contact";
+
+@import "footer";

@@ -1,0 +1,77 @@
+.topnav {
+    height: 50px;
+    background: $base-color-dark;
+    background-color: $base-color-dark;
+    @include background-image(linear-gradient($base-color-light, $base-color-dark));
+    @include box-shadow($base-color-dark 0px 2px 5px);
+    border-bottom: 1px solid darken($base-color-dark, 10%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    #branding {
+        width: 100%;
+        font-family: 'Julius Sans One', sans-serif;
+        @include adjust-font-size-to(12px);
+        @include rhythm(4,0,0,0,16px);
+        text-align: center;
+        padding-left: .55em;
+        color: $background;
+        text-shadow: -1px -1px 0 $base-color-dark;
+    }
+    #logosmall {
+        display: none;
+    }
+    #logolarge {
+        display: none;
+    }
+    a {
+        text-decoration: none;
+        font-weight: 700;
+    }
+    @include at-breakpoint($break) {
+        height:70px;
+        padding-top: 1em;
+        #branding {
+            text-align: left;
+            @include adjust-font-size-to(18px);
+            display: inline-block;
+            padding-left: $gutter-width*7;
+            @include leader(1.7, 16px);
+        }
+        #logosmall {
+            display: block;
+            position: fixed;
+            overflow: visible;
+            margin: -$gutter-width 0 0 $gutter-width;
+        }
+    }
+    @include at-breakpoint($break1) {        
+        #branding {
+            text-align: left;
+            display: inline-block;
+            padding-left: $gutter-width*6;
+            @include adjust-font-size-to(25px);
+            @include leader(1, 16px);
+        }
+        #logosmall {
+            display: none;
+        }
+        #logolarge {
+            display: block;
+            position: fixed;
+            overflow: visible;
+            margin: -$gutter-width 0 0 $gutter-width;
+        }
+    }
+}
+/* -------------------------------------------------------------------------*/
+.mainmenu {
+    @include mobilemenu;
+    @include at-breakpoint($break) {
+        @include deskmenu;
+        display: inline-block;
+    }
+}
+/* -------------------------------------------------------------------------*/

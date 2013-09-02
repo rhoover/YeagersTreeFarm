@@ -1,0 +1,49 @@
+.telephone {
+    @include basicbutton;
+    // color: $dark-base-text;
+    text-decoration: underline;
+    @include rhythm(3,1,1,3,16px);
+}
+.contactpage {
+    @include rhythm(0,0,0,0,26px);
+}
+
+#contact {
+    @include rhythm(12,0,0,0,16px);
+    fieldset {
+        border: none;
+        padding: 0,0,0,0;
+        @include rhythm(2,0,0,0,16px);
+    }
+    label {
+        float: left;
+        clear: left;
+        @include span-columns(12);
+        @include rhythm(1,0,0,1,16px);
+    }
+    input {
+        clear: left;
+        @include span-columns(12);
+        margin-bottom: $gutter-width;
+        @include border-radius(.45em);
+        border: 1px solid $dark-base-text;
+        @include rhythm(0,1,1,0,16px);
+        padding-left: .5em;
+        &:hover {
+            border: 1px solid darken($dark-base-text, 25%);
+            background: $background;
+        }
+        &:focus {
+            border: 1px solid darken($dark-base-text, 25%);
+            background: $background;
+        }
+    }
+    input[type=submit] {
+        @include pre(2);
+        @include span-columns(8,12);
+        @include basicbutton;
+    }
+    textarea {
+        @extend input;
+    }
+}
